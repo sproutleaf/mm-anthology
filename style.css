@@ -1,0 +1,109 @@
+@font-face {
+    font-family: "Hershey Noailles Futura";
+    src: url("Hershey-Noailles-Futura-Simplex-Bold.woff") format("woff");
+    font-style: normal;
+}
+
+:root {
+    --x: 0.5;
+    --y: 0.5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hershey Noailles Futura";
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#story {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+#words {
+    border-style: none;
+    border-width: 1px;
+    padding: 2vh;
+    position: relative;
+    z-index: 1000;
+    top: calc(var(--y) * 1px);
+    left: calc(var(--x) * 1px);
+    width: fit-content;
+    height: fit-content;
+    max-width: 25vw;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255);
+    display: inline-block;
+    text-wrap: wrap;
+    text-overflow: clip;
+    word-break: keep-all;
+}
+
+#meta {
+    z-index: 999;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    padding: 1.25rem 2rem;
+    font-size: 5vh;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+#meta #about {
+    pointer-events: all;
+}
+
+#catalog {
+    margin-top: 80px;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    font-size: 1.5em;
+}
+
+#catalog .item {
+    display: inline-block;
+    width: 16%;
+    min-height: 200px;
+    height: auto;
+    margin-bottom: 1em;
+    position: relative !important;
+    cursor: pointer;
+}
+
+#catalog .item p {
+    visibility: hidden;
+    height: 0px;
+}
+
+.item[image] {
+    text-align: center;
+}
+
+.item img {
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 78%;
+    max-height: 95%;
+    object-fit: contain;
+}
